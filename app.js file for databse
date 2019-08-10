@@ -1,0 +1,134 @@
+//database file install nodejs import all the packages
+
+var express=require('express');
+var mysql= require('mysql');
+var session=require('express-session');
+var bodyParser= require('body-parser');
+var PORT=process.env.PORT || 8080; 
+var app=express();
+app.use(express.static('js'));
+app.use(express.static('photos'));
+app.use(express.static('video'));
+app.use(bodyParser.urlencoded({extended:true}));
+app.use(bodyParser.json());
+var connection=mysql.createConnection({
+	host:"localhost",
+	user:"root",
+	password:"",
+	database:"hotel"
+});
+
+connection.connect(function(err){
+	if(err) throw err; 
+	console.log("database connected");
+});
+
+app.get("/",function(req,res){
+	res.sendFile('index.html',{root:__dirname});
+});
+
+app.get("/login",function(req,res){
+	res.sendFile('login.html',{root:__dirname});
+});
+
+
+app.get("/regestration",function(req,res){
+	res.sendFile('regestration.html',{root:__dirname});
+});
+
+
+app.get("/gallery",function(req,res){
+	res.sendFile('slide.html',{root:__dirname});
+});
+
+
+app.get("/booking",function(req,res){
+	res.sendFile('book.html',{root:__dirname});
+});
+
+app.get("/overview",function(req,res){
+	res.sendFile('overview.html',{root:__dirname});
+});
+
+
+app.get("/view",function(req,res){
+	res.sendFile('video.html',{root:__dirname});
+});
+
+app.get("/book",function(req,res){
+	res.sendFile('book.html',{root:__dirname});
+});
+
+
+
+
+
+app.post("/login",function(req,res){
+	var username=req.body.username;
+	var email=req.body.email;
+	var password=req.body.password;
+	var phone=req.body.phone;
+
+	var sql="INSERT INTO users values(null,'"+username+"','"+email+"','"+password+"','"+phone+"')";
+    connection.query(sql,function(err){
+    	if(err) throw err;
+    	res.redirect("/login");
+    });
+
+
+});
+
+app.use(session({
+	secret: 'secret',
+	resave: true,
+	saveUninitialized: true
+}));
+app.post('/auth', function(req,res) {
+	var email = req.body.email;
+	var password = req.body.password;
+	if (email && password) {
+		connection.query('SELECT * FROM users WHERE email = ? AND password = ?', [email, password], function(error, results, fields) {
+			if (results.length > 0) {
+				req.session.loggedin = true;
+				req.session.email = email;
+				// res.send("You Logged in successfully");
+			    res.redirect("/booking");
+			} else {
+				res.send('Incorrect Username and/or Password!');
+			}			
+			res.end();
+		});
+	} else {
+		res.send('Please enter Username and Password!');
+		res.end();
+	}
+});
+
+
+
+app.post('/booking',function(req,res){
+	var sql='INSERT INTO booking values("'+req.body.name+'","'+req.body.email+'","'+req.body.mobile+'","'+req.body.checkin+'","'+req.body.checkout+'","'+req.body.roomtype+'","'+req.body.roomseater+'")';
+    connection.query(sql,function(err){
+    	if(err) throw err;
+    	res.send("Room booked successfully<br>For PAYMENT open your registered Email<br><br>THANK YOU");
+
+    });
+});
+
+
+
+app.post('/feedback', function(req,res){
+	var sql='INSERT INTO feedback values("'+req.body.feed+'")';
+	connection.query(sql,function(err){
+    	if(err) throw err;
+    	res.send("Feedback submitted successfully");
+    });
+});
+
+
+
+app.listen(PORT,function(err) {
+     if(err) {throw err;}
+      console.log(`Server is running on port addres${PORT}`);
+})
+
