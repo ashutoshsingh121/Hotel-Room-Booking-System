@@ -1,0 +1,464 @@
+<!DOCTYPE>
+<html>
+<head>
+<title>Hotel Management System</title>
+<script src="dhtmlxcalendar.js"></script>
+
+<style>
+  @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+		#calendar,
+		#calendar2,
+		 	{
+			border: 1px solid #909090;
+			font-family: Tahoma;
+			font-size: 12px;
+			}
+      h1,h2,h3,h4,h5,h6,p{font-family:'Open Sans',sans-serif;
+    }
+
+ body{
+  margin:0px;
+  padding:0px;
+  background-image: url(alpha_tajmahal.jpg);
+  background-size: cover;
+  background-position: center;
+}
+#holder{
+  border:0px solid;
+  width:1347px;
+  height:auto;
+  margin-left:0px;
+  margin-right:0px;
+  margin-top:0px;
+  margin-bottom:0px;
+  }
+#header{
+  background-image:url(cool.jpg);
+  background-repeat:no-repeat;
+  border:0.5px solid;
+  width:100%;
+  height:105px;
+  margin-top:-100px;
+  margin-right:0px;
+  margin-left:0px;
+   background-size: cover;
+  }
+#header ul{
+  list-style-type:none;
+  }
+#header ul li a{
+  border:3px solid;
+  font-size:13px;
+  float:right;
+  background-color:white;
+  width:110px;
+  height:50px;
+  text-align:center;
+  margin:0px 10px 0px 10px;
+  font-weight:bold;
+  line-height:50px;
+  border-radius:50px;
+  transition-duration:0.4s;
+  transition-timing-function:linear;
+  margin-top: 30px;
+  } 
+#header ul li a{
+  text-decoration:none;
+  color:white;
+  }
+#header ul li a:hover{
+      background-color:#1fb5ac;
+      color:#4b388a;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+#header ul li a:active{
+  background-color:#00FFFF;
+}
+#ab{
+  border:0px solid;
+  width:56px;
+  height:551px;
+  margin-top:-21px;
+  }
+#check{
+  border:0px solid;
+  color:#FF0;
+  width:285px;
+  height:200px;
+  margin-left:6px;
+  margin-right:0px;
+  margin-bottom:auto;
+  margin-top:2px
+  }
+#fd{
+  margin-left:10px;
+  width:200px;
+  height:100px;
+  color:#FF0;
+  margin-top: 130px;
+  }
+#ac{
+  background-color:#355C7D;
+  border:0px solid;
+  width:400px;
+  height:551px;
+  text-align:center;
+  margin-left:0%;
+  margin-right:auto;
+  margin-top:-589px;
+  margin-bottom:auto; 
+  }
+#a{
+  border-radius:170px;
+  border:2px solid;
+  width:300px;
+  height:155px;
+  font-size:20px;
+  background-image:url("4.jpg");
+  background-repeat:no-repeat;
+  margin-top:-10px;
+  margin-bottom:10px;
+  margin-left:30px;
+  background-size: cover;
+  }
+#b{
+  border-radius:170px;
+  border:2px solid;
+  width:300px;
+  height:155px;
+  font-size:20px;
+  background-image:url("67.jpg");
+  background-repeat:no-repeat;
+  margin-bottom:10px;
+  margin-left:30px;
+  background-size: cover;
+  }
+#c{
+  border-radius:170px;
+  border:2px solid;
+  width:300px;
+  height:155px;
+  font-size:20px;
+  background-image:url("3.jpg");
+  background-repeat:no-repeat;
+  margin-left:30px;
+  background-size: cover;
+}
+#offer{
+  background-color: #355C7D;
+  border:0px solid;
+  width:400px;
+  height:559px;
+  text-align:center;
+  margin-left:500px;
+  margin-top:-573px;
+  margin-left: 470px;
+  }
+#a1{
+  border:1px solid;
+  width:268px;
+  height:160px;
+  color:#93C;
+  background-image:url("a.jpg");
+  background-size:268px;
+  background-repeat:no-repeat;
+  margin-top:-12px;
+  margin-left: 60px;
+  font-family: 'ABeeZee', sans-serif;"
+  }
+#b1{
+  border:1px solid;
+  width:268px;
+  height:165px;
+  color:#93C;
+  background-image:url("b.jpg");
+  background-size:268px;
+  background-repeat:no-repeat;
+  margin-left: 60px;
+  font-family: 'ABeeZee', sans-serif;"
+  
+  }
+#c1{
+  border:1px solid;
+  width:268px;
+  height:175px;
+  color:#93C;
+  background-image:url("c.jpg");
+  background-size:268px;
+  background-repeat:no-repeat;
+  margin-left: 60px;
+  font-family: 'ABeeZee', sans-serif;"
+}
+#nonac{
+  background-color:#355C7D;
+  border:0px solid;
+  width:398px;
+  height:551px;
+  text-align:center;
+  margin-left:1000px;
+  margin-top:-580px;
+  margin-right:auto;
+  margin-bottom:auto;
+  margin-left: 949px;
+
+  }
+#a2{
+  border-radius:170px;
+  border:2px solid;
+  width:300px;
+  height:155px;
+  font-size:20px;
+  background-image:url("56.jpg");
+  background-repeat:no-repeat;
+  margin-top:-10px;
+  margin-bottom:10px;
+  margin-left:50px;
+  background-size: cover;
+
+  }
+#b2{  
+  border-radius:170px;
+  border:2px solid;
+  width:300px;
+  height:155px;
+  font-size:20px;
+  background-image:url("78.jpg");
+  background-repeat:no-repeat;
+  margin-bottom:10px;
+  margin-left:50px;
+  background-size: cover;
+  }
+#c2{
+  border-radius:170px;
+  border:2px solid;
+  width:300px;
+  height:155px;
+  font-size:20px;
+  background-image:url("98.jpg");
+  background-repeat:no-repeat;
+  margin-left:50px;
+  background-size: cover;
+}
+  #terms
+  {
+    font-size: 20px;
+    text-align: center;
+    margin-top:60px;
+    background-color: white;
+    font-family: monospace;
+  }
+  #paragraph
+  {
+    width: 800px;
+    height: 500px;
+    margin-left: 300px;
+    padding: 30px;
+    text-align: justify;
+    line-height: 30px;
+
+  }
+#secmap
+{
+  width:100%;
+  height: 399px;
+  border: thin;
+  background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url("cool.jpg");
+  background-position: center;
+  z-index: -1;
+}
+#map
+{
+  width: 380px;
+  height: 250px;
+  position: absolute;
+  margin-top: 80px;
+  margin-left: 850px;  
+}
+#feedback1
+{width: 380px;
+  height: 250px;
+  background-color: white;
+  position: absolute;
+  margin-top: 80px;
+  margin-left: 80px;
+}
+#feedback1 h1
+{
+  text-align: center;
+  color: black;
+  text-decoration: bold;
+  font-size: 30px;
+}
+</style>
+
+	<script>
+		var myCalendar;
+		function doOnLoad() 
+			{
+			myCalendar = new dhtmlXCalendarObject(["calendar","calendar2",]);
+			}
+	</script>
+</head>
+
+
+<body onload="doOnLoad();">
+<div id="holder"><a href=""><img src="22.jpg" width="90px" height="53px"/></a>
+
+	 <div id="header">
+     
+	<ul>
+      <li><a style="color: black;" href="/login">Login</a></li>
+      <li><a style="color: black;" href="/regestration">Registration</a></li>
+      <li><a style="color: black;"  href="/overview">Overview</a></li>
+      <li><a style="color: black;"  href="/gallery">Gallery</a></li>
+      <li><a style="color: black;" href="/booking">Booking</a></li>
+        <li><a style="color: black;"  href="/">Home</a></li>
+    </ul>
+    </div>
+	<br> 
+
+    <div id="ab">
+    <div id="check">
+    <br>
+   </div>
+	</div>
+        <br clear="all"/>
+
+
+ 	<div id="ac">
+    	<h1>A/C</h1>
+    		<div id="a">
+            <br><br><br><br>
+        		&nbsp;&nbsp;&nbsp;  &nbsp;  &nbsp; 
+            <b>Single Bed
+              Rs.2000</b></font>
+           		
+          	 	<br>&nbsp;&nbsp;&nbsp;
+               <a href="http://localhost:8080/view"><input type="submit" value="View"></a>
+           	<a href="http://localhost:8080/book"><input type="submit" value="Book"></a>
+        	</div><!--a-->
+        	<div id="b">
+          		<br><br><br><br>
+           	&nbsp;&nbsp;&nbsp;  &nbsp;  &nbsp;
+            <b>  
+				Double Bed
+        Rs.3000
+      </b>
+           		 <br>&nbsp;&nbsp;&nbsp;
+                <a href="http://localhost:8080/view"><input type="submit" value="View"></a>
+           		<a href="http://localhost:8080/book"><input type="submit"  value="Book"></a>
+        	</div><!--b-->
+        	<div id="c">
+        		<br><br><br><br>
+                &nbsp;&nbsp;&nbsp;  &nbsp;  &nbsp; 
+                <b>
+                Triple Bed
+                Rs.5000
+              </b>
+                <br>&nbsp;&nbsp;&nbsp;
+               <a href="http://localhost:8080/view"><input type="submit" value="View"></a>
+               <a href="http://localhost:8080/book"><input type="submit" value="Book"></a>	
+        	</div><!--c-->
+          </div><!--ac-->
+   
+    <div id="offer">
+    	<h1>Special Offers</h1>
+        	<div id="a1"><p>&nbsp;</p>
+            <br><br>
+
+      			  Single Bed<br>
+      			  Three Booking<br>For <b>5</b>% discount
+    		</div><!--a1-->
+            <div id="b1"><p>&nbsp;</p><br>
+           <br>
+      			  Double Bed<br>
+      			  Three Booking<br> For <b>10</b>% discount
+    		</div><!--b1-->
+            <div id="c1"><p>&nbsp;</p><br>
+            <br>
+      			  Three Bed<br>
+      			  Three Booking<br> For <b>15</b>% discount
+    		</div><!--c1-->
+    </div><!--offer-->
+    <div id="nonac">
+    	<h1>Non-A/C</h1>
+
+        	<div id="a2">
+        	
+            <b>	
+              <br><br><br><br>
+           		Single Bed 
+              Rs.1000
+            </b>
+          	 	<br>&nbsp;&nbsp;&nbsp;
+                <a href="http://localhost:8080/view"><input type="submit" value="View"></a>
+           		<a href="http://localhost:8080/book"><input type="submit" value="Book"></a>	
+        	</div><!--a2-->
+        	<div id="b2">
+          		&nbsp;<p>&nbsp;</p>
+                &nbsp;&nbsp;
+                <b>
+				Double Bed
+         Rs.2000
+       </b>
+           		 <br>&nbsp;&nbsp;&nbsp;
+                <a href="http://localhost:8080/view"><input type="submit" value="View"></a>
+           		 <a href="http://localhost:8080/book"><input type="submit" value="Book"></a>
+        	</div>
+        	<div id="c2">
+        	&nbsp;<p>&nbsp;</p>
+                &nbsp;&nbsp;
+                <b>
+                Tripple Bed
+                Rs.3500
+              </b>
+                <br>&nbsp;&nbsp;&nbsp;
+                <a href="http://localhost:8080/view"><input type="submit" value="View"></a>
+                <a href="http://localhost:8080/book"><input type="submit" value="Book"></a>	
+        	</div><!--c2-->
+    </div><!--nonac-->
+	</div><!--rest-->
+</div><!--holder -->
+
+
+<script type="text/javascript">
+  function myfun()
+  {
+    alert("Submitted Successfully");
+
+
+  }
+</script>
+
+<script type="text/javascript">
+  function myfun2()
+  {
+    alert("Reset Successfully");
+     }
+</script>
+
+<div id="terms">
+  <br>
+  <h1 style="font-family: 'ABeeZee', sans-serif;"><u>About Us </u> </h1>
+  <br>
+<div class="parragraph"><p>   Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+  <br><br>
+
+  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+</p>
+
+
+<div id="secmap">
+      <div id="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13644.572909453562!2d75.70225625!3d31.24445815!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x83cfb31c10ef164d!2sBoys+Hostel+4%2C+LPU!5e0!3m2!1sen!2sin!4v1564166254475!5m2!1sen!2sin" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
+      </div>
+      <div id="feedback1">
+         <h1> Feedback Form</h1> 
+          <form method="POST" action="/feedback">
+                <textarea rows="8" cols="38" placeholder="Please give us valuable feedback." name="feed"></textarea><br><br>
+                <input type="submit" name="submit" value="Submit" />
+              </form>
+      </div>
+</div>
+</body>
+</html>
